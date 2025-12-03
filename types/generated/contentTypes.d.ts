@@ -430,41 +430,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContenidoNoticiaContenidoNoticia
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'contenido_noticias';
-  info: {
-    displayName: 'contenidoNoticia';
-    pluralName: 'contenido-noticias';
-    singularName: 'contenido-noticia';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    categoria: Schema.Attribute.String;
-    contenido: Schema.Attribute.Text & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    fecha: Schema.Attribute.String;
-    imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    key: Schema.Attribute.String & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contenido-noticia.contenido-noticia'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    resumen: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -1031,7 +996,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::contenido-noticia.contenido-noticia': ApiContenidoNoticiaContenidoNoticia;
       'api::home.home': ApiHomeHome;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'plugin::content-releases.release': PluginContentReleasesRelease;
