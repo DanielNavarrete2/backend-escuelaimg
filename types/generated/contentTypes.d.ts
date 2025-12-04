@@ -445,6 +445,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    footertitle: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     imagen2: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -458,6 +459,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     subtitle2: Schema.Attribute.String;
     subtitle3: Schema.Attribute.String;
+    subtitlefooter: Schema.Attribute.String;
     subtitleslider1: Schema.Attribute.String;
     subtitleslider2: Schema.Attribute.String;
     subtitleslider3: Schema.Attribute.String;
@@ -468,6 +470,35 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavmenuNavmenu extends Struct.CollectionTypeSchema {
+  collectionName: 'navmenus';
+  info: {
+    displayName: 'navmenu';
+    pluralName: 'navmenus';
+    singularName: 'navmenu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navmenu.navmenu'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -1080,6 +1111,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::home.home': ApiHomeHome;
+      'api::navmenu.navmenu': ApiNavmenuNavmenu;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::noticiascontenido.noticiascontenido': ApiNoticiascontenidoNoticiascontenido;
       'api::pilare.pilare': ApiPilarePilare;
