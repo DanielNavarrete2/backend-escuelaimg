@@ -13,10 +13,23 @@ export interface BloquesAreaDetalle extends Struct.ComponentSchema {
   };
 }
 
+export interface NavegadorMenu extends Struct.ComponentSchema {
+  collectionName: 'components_navegador_menus';
+  info: {
+    displayName: 'menu';
+    icon: 'alien';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'bloques.area-detalle': BloquesAreaDetalle;
+      'navegador.menu': NavegadorMenu;
     }
   }
 }

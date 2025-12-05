@@ -473,12 +473,12 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNavmenuNavmenu extends Struct.CollectionTypeSchema {
-  collectionName: 'navmenus';
+export interface ApiNavNav extends Struct.SingleTypeSchema {
+  collectionName: 'navs';
   info: {
-    displayName: 'navmenu';
-    pluralName: 'navmenus';
-    singularName: 'navmenu';
+    displayName: 'nav';
+    pluralName: 'navs';
+    singularName: 'nav';
   };
   options: {
     draftAndPublish: true;
@@ -487,18 +487,15 @@ export interface ApiNavmenuNavmenu extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::navmenu.navmenu'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::nav.nav'> &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    nav: Schema.Attribute.Component<'navegador.menu', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 
@@ -1083,7 +1080,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::home.home': ApiHomeHome;
-      'api::navmenu.navmenu': ApiNavmenuNavmenu;
+      'api::nav.nav': ApiNavNav;
       'api::noticiascontenido.noticiascontenido': ApiNoticiascontenidoNoticiascontenido;
       'api::pilare.pilare': ApiPilarePilare;
       'plugin::content-releases.release': PluginContentReleasesRelease;
