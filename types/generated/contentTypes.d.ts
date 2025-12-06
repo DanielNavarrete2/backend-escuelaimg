@@ -604,13 +604,12 @@ export interface ApiNosotroNosotro extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNoticiascontenidoNoticiascontenido
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'noticiascontenidos';
+export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
+  collectionName: 'noticias';
   info: {
     displayName: 'noticia';
-    pluralName: 'noticiascontenidos';
-    singularName: 'noticiascontenido';
+    pluralName: 'noticias';
+    singularName: 'noticia';
   };
   options: {
     draftAndPublish: true;
@@ -623,12 +622,12 @@ export interface ApiNoticiascontenidoNoticiascontenido
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     fecha: Schema.Attribute.Date;
-    imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imagen: Schema.Attribute.Media<'images'>;
     key: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::noticiascontenido.noticiascontenido'
+      'api::noticia.noticia'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1189,7 +1188,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::nav.nav': ApiNavNav;
       'api::nosotro.nosotro': ApiNosotroNosotro;
-      'api::noticiascontenido.noticiascontenido': ApiNoticiascontenidoNoticiascontenido;
+      'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pilare.pilare': ApiPilarePilare;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

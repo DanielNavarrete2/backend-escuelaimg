@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "noticiascontenidos",
+  "collectionName": "noticias",
   "info": {
-    "singularName": "noticiascontenido",
-    "pluralName": "noticiascontenidos",
+    "singularName": "noticia",
+    "pluralName": "noticias",
     "displayName": "noticia"
   },
   "options": {
@@ -23,7 +23,6 @@
     "imagen": {
       "type": "media",
       "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
       ]
