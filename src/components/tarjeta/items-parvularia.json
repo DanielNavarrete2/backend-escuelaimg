@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_tarjeta_items_parvularias",
+  "info": {
+    "displayName": "items_parvularia"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "texto": {
+      "type": "text"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

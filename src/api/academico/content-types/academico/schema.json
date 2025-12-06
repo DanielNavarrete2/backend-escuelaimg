@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "academicos",
+  "info": {
+    "singularName": "academico",
+    "pluralName": "academicos",
+    "displayName": "academico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo_principal": {
+      "type": "string"
+    },
+    "bajada_principal": {
+      "type": "text"
+    },
+    "titulo_seccion_1": {
+      "type": "string"
+    },
+    "items_parvularia": {
+      "type": "component",
+      "component": "tarjeta.items-parvularia",
+      "repeatable": true
+    },
+    "titulo_seccion_2": {
+      "type": "string"
+    },
+    "items_basica": {
+      "type": "component",
+      "component": "tarjeta.items-basica",
+      "repeatable": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

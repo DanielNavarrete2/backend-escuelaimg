@@ -430,6 +430,74 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAcademicoAcademico extends Struct.SingleTypeSchema {
+  collectionName: 'academicos';
+  info: {
+    displayName: 'academico';
+    pluralName: 'academicos';
+    singularName: 'academico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bajada_principal: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen: Schema.Attribute.Media<'images'>;
+    items_basica: Schema.Attribute.Component<'tarjeta.items-basica', true>;
+    items_parvularia: Schema.Attribute.Component<
+      'tarjeta.items-parvularia',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::academico.academico'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo_principal: Schema.Attribute.String;
+    titulo_seccion_1: Schema.Attribute.String;
+    titulo_seccion_2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAdmisioneAdmisione extends Struct.SingleTypeSchema {
+  collectionName: 'admisiones';
+  info: {
+    displayName: 'admisione';
+    pluralName: 'admisiones';
+    singularName: 'admisione';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::admisione.admisione'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle1: Schema.Attribute.Text;
+    subtitle2: Schema.Attribute.String;
+    titulo1: Schema.Attribute.String;
+    titulo2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -496,6 +564,43 @@ export interface ApiNavNav extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotroNosotro extends Struct.SingleTypeSchema {
+  collectionName: 'nosotros';
+  info: {
+    displayName: 'nosotro';
+    pluralName: 'nosotros';
+    singularName: 'nosotro';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text;
+    equipo: Schema.Attribute.Component<'equipo.nosotros', true>;
+    etiqueta: Schema.Attribute.String;
+    frase_final: Schema.Attribute.Text;
+    imagen: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotro.nosotro'
+    > &
+      Schema.Attribute.Private;
+    mision_texto: Schema.Attribute.Text;
+    mision_titulo: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vision_texto: Schema.Attribute.Text;
+    vision_titulo: Schema.Attribute.String;
   };
 }
 
@@ -1079,8 +1184,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::academico.academico': ApiAcademicoAcademico;
+      'api::admisione.admisione': ApiAdmisioneAdmisione;
       'api::home.home': ApiHomeHome;
       'api::nav.nav': ApiNavNav;
+      'api::nosotro.nosotro': ApiNosotroNosotro;
       'api::noticiascontenido.noticiascontenido': ApiNoticiascontenidoNoticiascontenido;
       'api::pilare.pilare': ApiPilarePilare;
       'plugin::content-releases.release': PluginContentReleasesRelease;
