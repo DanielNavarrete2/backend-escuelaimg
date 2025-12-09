@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "nosotros",
+  "info": {
+    "singularName": "nosotro",
+    "pluralName": "nosotros",
+    "displayName": "nosotro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "mision_titulo": {
+      "type": "string"
+    },
+    "mision_texto": {
+      "type": "text"
+    },
+    "vision_titulo": {
+      "type": "string"
+    },
+    "vision_texto": {
+      "type": "text"
+    },
+    "equipo": {
+      "type": "component",
+      "component": "equipo.nosotros",
+      "repeatable": true
+    },
+    "frase_final": {
+      "type": "text"
+    },
+    "equipo_titulo": {
+      "type": "string"
+    }
+  }
+}

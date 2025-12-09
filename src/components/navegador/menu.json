@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_navegador_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

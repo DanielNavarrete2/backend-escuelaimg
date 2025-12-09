@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "admisiones",
+  "info": {
+    "singularName": "admisione",
+    "pluralName": "admisiones",
+    "displayName": "admisione"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo1": {
+      "type": "string"
+    },
+    "subtitle1": {
+      "type": "text"
+    },
+    "titulo2": {
+      "type": "string"
+    },
+    "subtitle2": {
+      "type": "string"
+    },
+    "form": {
+      "type": "component",
+      "component": "formulario.form",
+      "repeatable": false
+    },
+    "form2": {
+      "type": "component",
+      "component": "formulario.form2",
+      "repeatable": false
+    }
+  }
+}

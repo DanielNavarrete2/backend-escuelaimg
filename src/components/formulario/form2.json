@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_formulario_form2s",
+  "info": {
+    "displayName": "form2",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "mensaje": {
+      "type": "string"
+    },
+    "submit": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "success": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

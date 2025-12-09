@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_tarjeta_tarjeta_infos",
+  "info": {
+    "displayName": "tarjeta_info",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
