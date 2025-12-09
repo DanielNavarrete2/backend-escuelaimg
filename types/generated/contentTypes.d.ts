@@ -481,6 +481,8 @@ export interface ApiAdmisioneAdmisione extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    form: Schema.Attribute.Component<'formulario.form', false>;
+    form2: Schema.Attribute.Component<'formulario.form2', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -520,6 +522,35 @@ export interface ApiFaviconFavicon extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    eslogan: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -611,6 +642,7 @@ export interface ApiNosotroNosotro extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     descripcion: Schema.Attribute.Text;
     equipo: Schema.Attribute.Component<'equipo.nosotros', true>;
+    equipo_titulo: Schema.Attribute.String;
     etiqueta: Schema.Attribute.String;
     frase_final: Schema.Attribute.Text;
     imagen: Schema.Attribute.Media<'images'>;
@@ -664,6 +696,33 @@ export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPilarPilar extends Struct.SingleTypeSchema {
+  collectionName: 'pilars';
+  info: {
+    displayName: 'pila';
+    pluralName: 'pilars';
+    singularName: 'pilar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    explorar: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::pilar.pilar'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    volver: Schema.Attribute.String;
   };
 }
 
@@ -1214,10 +1273,12 @@ declare module '@strapi/strapi' {
       'api::academico.academico': ApiAcademicoAcademico;
       'api::admisione.admisione': ApiAdmisioneAdmisione;
       'api::favicon.favicon': ApiFaviconFavicon;
+      'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
       'api::nav.nav': ApiNavNav;
       'api::nosotro.nosotro': ApiNosotroNosotro;
       'api::noticia.noticia': ApiNoticiaNoticia;
+      'api::pilar.pilar': ApiPilarPilar;
       'api::pilare.pilare': ApiPilarePilare;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -17,6 +17,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "icono": {
+      "type": "string"
     }
   },
   "config": {}

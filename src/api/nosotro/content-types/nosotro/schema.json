@@ -46,6 +46,9 @@
     },
     "frase_final": {
       "type": "text"
+    },
+    "equipo_titulo": {
+      "type": "string"
     }
   }
 }

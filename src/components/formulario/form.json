@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_formulario_forms",
+  "info": {
+    "displayName": "form",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "estudiante": {
+      "type": "string"
+    },
+    "apoderado": {
+      "type": "string"
+    },
+    "nivel": {
+      "type": "string"
+    },
+    "niveles_educativos": {
+      "type": "json"
+    },
+    "email": {
+      "type": "string"
+    },
+    "mensaje": {
+      "type": "string"
+    },
+    "submit": {
+      "type": "string"
+    },
+    "success": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

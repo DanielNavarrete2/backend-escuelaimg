@@ -22,6 +22,16 @@
     },
     "subtitle2": {
       "type": "string"
+    },
+    "form": {
+      "type": "component",
+      "component": "formulario.form",
+      "repeatable": false
+    },
+    "form2": {
+      "type": "component",
+      "component": "formulario.form2",
+      "repeatable": false
     }
   }
 }
